@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dimensione matrice", "dimensione matrice\dimensione matrice.csproj", "{752150D0-E22B-411F-B3D2-C65885FF0EFE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{752150D0-E22B-411F-B3D2-C65885FF0EFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{752150D0-E22B-411F-B3D2-C65885FF0EFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{752150D0-E22B-411F-B3D2-C65885FF0EFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{752150D0-E22B-411F-B3D2-C65885FF0EFE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E5CB3A31-F820-4D0E-954E-5AA82CBBEA0C}
+	EndGlobalSection
+EndGlobal
