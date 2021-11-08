@@ -13,7 +13,7 @@ namespace Property
             Console.WriteLine($"Altezza {p.Altezza}");
             p.Altezza = -180;
             Console.WriteLine($"Altezza {p.Altezza}");
-
+            
             Console.WriteLine($"{p.Nome} {p.Cognome} ha {p.Eta} anni");
         }
     }
