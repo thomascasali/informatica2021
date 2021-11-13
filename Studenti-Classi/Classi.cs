@@ -45,23 +45,42 @@ namespace Studenti_Classi
         }
     }
 
-    class Studente
+    class Persona
     {
-        string nome;
-        string cognome;
-        string cf;
-        DateTime datanascita;
-        string email;
+        protected string nome;
+        protected string cognome;
+        protected string cf;
+        protected DateTime datanascita;
+        protected string email;
 
-        public Studente(string nome, string cognome)
+        public Persona(string nome, string cognome)
         {
             this.nome = nome;
             this.cognome = cognome;
         }
 
+        public int Eta
+        {
+            get { return DateTime.Now.Year - datanascita.Year; }
+        }
         public string NomeCognome
         {
-            get { return nome + " " + cognome ; }
+            get { return nome + " " + cognome; }
+        }
+    }
+
+    class Studente : Persona
+    {
+        string matricola;
+        
+        public Studente(string nome, string cognome, string matricola) : base(nome,cognome)
+        {
+            this.matricola = matricola;
+        }
+
+        public string Matricola
+        {
+            get { return matricola; }
         }
     }
 }
