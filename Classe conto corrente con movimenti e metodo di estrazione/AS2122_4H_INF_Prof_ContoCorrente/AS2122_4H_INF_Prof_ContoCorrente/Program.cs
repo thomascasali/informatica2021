@@ -1,6 +1,7 @@
 ﻿using System;
 
 using System.Collections.Generic;
+using System.Linq;
 
 namespace AS2122_4H_INF_Prof_ContoCorrente
 {
@@ -35,8 +36,15 @@ namespace AS2122_4H_INF_Prof_ContoCorrente
 
         public struct Movimento
         {
-            public DateTime data;
-            public double importo;
+            public Movimento(DateTime data, double importo)
+            {
+                this.data = data;
+                this.importo = importo;
+            }
+            public DateTime data { get; }
+            public double importo { get; }
+
+            public override string ToString() => $"({data}, {importo})";
         }
 
         List<Movimento> movimenti = new List<Movimento>();
@@ -56,13 +64,7 @@ namespace AS2122_4H_INF_Prof_ContoCorrente
         {
             saldo += importo;
 
-            // aggiungi il movimento nell'elenco movimenti
-            Movimento m = new Movimento();
-
-            m.data = DateTime.Now;
-            m.importo = importo;
-
-            movimenti.Add(m);
+            movimenti.Add(new Movimento(DateTime.Now, importo));
         }
 
         /// <summary>
@@ -79,13 +81,7 @@ namespace AS2122_4H_INF_Prof_ContoCorrente
             {
                 saldo -= importo;
 
-                // aggiungi il movimento nell'elenco movimenti
-                Movimento m = new Movimento();
-
-                m.data = DateTime.Now;
-                m.importo = -importo;
-
-                movimenti.Add(m);
+                movimenti.Add(new Movimento(DateTime.Now, -importo));
                 res = true;
             }
             else
@@ -119,13 +115,20 @@ namespace AS2122_4H_INF_Prof_ContoCorrente
 
         public List<Movimento> GetMovimenti(DateTime daData, DateTime aData)
         {
-            List<Movimento> res = new List<Movimento>();
+            //List<Movimento> result = new List<Movimento>();
 
-            foreach (Movimento m in movimenti)
-                if (m.data > daData && m.data <= aData.AddDays(1))
-                    res.Add(m);
+            // con foreach
+            //foreach (Movimento m in movimenti)
+            //    if (m.data >= daData && m.data <= aData.AddDays(1))
+            //        result.Add(m);
 
-            return res;
+            // con LINQ
+            var result = (from m in movimenti
+                          where m.data >= daData && m.data <= aData.AddDays(1)
+                          select m).ToList();
+
+            return result;
+;
         }
     }
 }
