@@ -8,9 +8,9 @@ namespace Automobile
     {
         string targa;
         DateTime dataImmatricolazione;
-        public Motore motore;
-        public Telaio telaio;
-        public Ruota[] ruote;
+        Motore motore;
+        Telaio telaio;
+        Ruota[] ruote;
 
         public Automobile()
         {
@@ -29,6 +29,26 @@ namespace Automobile
             ruote[2] = r3;
             ruote[3] = r4;
         }
+
+        public Motore Motore
+        {
+            get { return motore; }
+            set { Motore = value; }
+        }
+
+        public Telaio Telaio
+        {
+            get { return telaio; }
+            set { telaio = value; }
+        }
+
+        public Ruota[] Ruote
+        {
+            get { return ruote; }
+            set { ruote = value; }
+        }
+
+
     }
 
     class Motore
@@ -82,7 +102,7 @@ namespace Automobile
     {
         string tipo; //tradizionale, 4 stagioni, invernale
         int diametro;
-        float pressione;
+        double pressione;
 
         public Ruota()
         {
@@ -101,7 +121,7 @@ namespace Automobile
             get { return tipo; }
         }
 
-        public int Pressione
+        public double Pressione
         {
             get { return pressione; }
         }
