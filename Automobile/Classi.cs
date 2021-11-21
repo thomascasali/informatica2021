@@ -39,7 +39,7 @@ namespace Automobile
         public Telaio Telaio
         {
             get { return telaio; }
-            set { telaio = value; }
+            set => telaio = value; //altro tipo di sintassi per il set
         }
 
         public Ruota[] Ruote
@@ -139,6 +139,31 @@ namespace Automobile
             }
         }
 
+        //altro tipo di sintassi per i metodi di assegnazione semplici
+        public void Gonfia() => pressione += 0.1; 
+        public void Gonfia(double p)
+        {
+            pressione += p;
+        }
+        public void Sgonfia()
+        {
+            pressione -= 0.1;
+        }
+        public void Sgonfia(double p)
+        {
+            pressione -= p;
+        }
+        public bool AlertPressioneBassa()
+        {
+            if (pressione < 2) return true;
+            return false;
+        }
+
+        public bool AlertPressioneAlta()
+        {
+            if (pressione > 3.5) return true;
+            return false;
+        }
 
     }
 
