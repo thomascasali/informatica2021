@@ -14,7 +14,7 @@ namespace Automobile
             Console.WriteLine("Pressione della terza ruota: " + a.Ruote[2].Pressione);
             a.Ruote[2].Gonfia();
             Console.WriteLine("Pressione della terza ruota dopo il gonfiaggio: " + a.Ruote[2].Pressione);
-
+            int m=DateTime.Now.Millisecond;
         }
     }
 }
