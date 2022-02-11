@@ -54,7 +54,7 @@ namespace AS2122_4E_INF_Prof_PiuForm
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(163, 37);
+            this.txtNome.Location = new System.Drawing.Point(163, 48);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(324, 27);
             this.txtNome.TabIndex = 1;
